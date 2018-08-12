@@ -1,5 +1,13 @@
 'use strict';
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+    return collectionA.map(function (e) {
+            if(objectB.value.includes(e.key))
+            {
+              var num=Math.floor(e.count/3);
+                return e={"key":e.key,"count":e.count-num};
+            }
+            return e;
+        }
+    );
 }
